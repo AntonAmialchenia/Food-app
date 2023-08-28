@@ -14,6 +14,17 @@
       "withStory": false,
       "withLazy": false,
       "withIndex": true
+    },
+    "page": {
+      "customTemplates": {
+        "component": "templates/page/TemplateName.tsx",
+        "index": "templates/page/index.ts"
+      },
+      "path": "src/pages",
+      "withLazy": false,
+      "withStory": false,
+      "withStyle": false,
+      "withIndex": true
     }
   },
   "usesStyledComponents": false,
