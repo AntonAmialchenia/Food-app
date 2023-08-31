@@ -8,7 +8,7 @@ export const App: FC = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         {appRoutes.map((item) => (
-          <Route path={item.path} element={item.element} />
+          <Route key={item.path} path={item.path} element={item.element} />
         ))}
       </Route>
     </Routes>

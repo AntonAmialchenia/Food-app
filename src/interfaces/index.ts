@@ -2,13 +2,13 @@ export interface IconProps {
   className?: string;
 }
 
-export interface Category {
+export interface ICategory {
   id: number;
   name: string;
   image_url: string;
 }
 
-export interface Dishes extends Category {
+export interface IDishes extends ICategory {
   price: number;
   weight: number;
   description: string;
