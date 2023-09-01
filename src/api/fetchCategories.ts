@@ -1,9 +1,11 @@
 import axios from "axios";
 import { URLS } from "../constants/urls";
-import { Category } from "../interfaces";
+import { ICategory } from "../interfaces";
 
 export const fetchCategories = async () => {
-  const { data } = await axios.get<{ сategories: Category[] }>(URLS.categories);
+  const { data } = await axios.get<{ сategories: ICategory[] }>(
+    URLS.categories,
+  );
 
   return data.сategories;
 };
