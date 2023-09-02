@@ -8,7 +8,7 @@ export interface ICategory {
   image_url: string;
 }
 
-export interface IDishes extends ICategory {
+export interface IDish extends ICategory {
   price: number;
   weight: number;
   description: string;
