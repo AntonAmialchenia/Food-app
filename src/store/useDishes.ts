@@ -1,9 +1,9 @@
 import { create } from "zustand";
 import { fetchDishes } from "./../api/fetchDishes";
-import { IDishes } from "../interfaces";
+import { IDish } from "../interfaces";
 
 interface DishesState {
-  dishes: IDishes[];
+  dishes: IDish[];
   isLoading: boolean;
   error: null | string;
   fetchAllDishes: () => void;
