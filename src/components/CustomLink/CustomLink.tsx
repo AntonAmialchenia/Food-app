@@ -15,7 +15,7 @@ export const CustomLink: FC<CustomLinkProps> = ({
 }) => {
   const match = useMatch({
     path: to,
-    end: to.length === 1,
+    end: to.length > 1,
   });
 
   return (

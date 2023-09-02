@@ -2,17 +2,8 @@ import { BasketIcon } from "../icons/BasketIcon";
 import { HomeIcon } from "../icons/HomeIcon";
 import { ProfileIcon } from "../icons/ProfileIcon";
 import { SearchIcon } from "../icons/SearchIcon";
-import { Basket } from "../pages/Basket";
-import { DishesPage } from "../pages/DishesPage";
-import { HomePage } from "../pages/HomePage";
-import { NotFound } from "../pages/NotFound";
 
-export const appRoutes = [
-  { path: "*", element: <NotFound /> },
-  { path: "", element: <HomePage /> },
-  { path: "dishes", element: <DishesPage /> },
-  { path: "basket", element: <Basket /> },
-];
+export const sortItems = ["Все меню", "С рисом", "Салаты", "С рыбой"];
 
 export const linkList = [
   { to: "/", text: "Главная", element: <HomeIcon /> },

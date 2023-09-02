@@ -1,15 +1,20 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "../layout";
-import { appRoutes } from "../constants";
+import { HomePage } from "../pages/HomePage";
+import { DishesPage } from "../pages/DishesPage";
+import { NotFound } from "../pages/NotFound";
+import { Basket } from "../pages/Basket";
 
 export const App: FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        {appRoutes.map((item) => (
-          <Route key={item.path} path={item.path} element={item.element} />
-        ))}
+        <Route path="" element={<HomePage />}>
+          <Route path="dishes" element={<DishesPage />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+        <Route path="basket" element={<Basket />} />
       </Route>
     </Routes>
   );
