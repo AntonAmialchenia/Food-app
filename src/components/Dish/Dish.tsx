@@ -1,14 +1,20 @@
-import { FC } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 import { IDish } from "../../interfaces";
 
 interface DishProps {
   item: IDish;
+  setIdDish: Dispatch<SetStateAction<number>>;
+  setVisible: Dispatch<SetStateAction<boolean>>;
 }
 
-export const Dish: FC<DishProps> = ({ item }) => {
+export const Dish: FC<DishProps> = ({ item, setIdDish, setVisible }) => {
+  const handlerClick = (id: number) => {
+    setIdDish(id);
+    setVisible(true);
+  };
   return (
-    <div className="cursor-pointer">
-      <div className="p-3 rounded-xl bg-[#F8F7F5] mb-4 flex justify-center ">
+    <div onClick={() => handlerClick(item.id)} className="cursor-pointer">
+      <div className="p-3 rounded-xl bg-[#F8F7F5] mb-4 flex justify-center transition-colors hover:bg-[#e5e4e2]">
         <img
           className="max-w-[200px] h-48"
           src={item.image_url}
