@@ -1,15 +1,11 @@
-import { FC, MouseEvent } from "react";
+import { FC } from "react";
 import { IconProps } from "../interfaces";
 
-interface CloseIconProps extends IconProps {
-  onClick?: (e: MouseEvent<HTMLOrSVGElement>) => void;
-}
-
-export const CloseIcon: FC<CloseIconProps> = ({ className, onClick }) => {
+export const CloseIcon: FC<IconProps> = ({ className, onClick }) => {
   return (
     <svg
       className={className}
-      onClick={(e) => (onClick ? onClick(e) : e)}
+      onClick={onClick}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
