@@ -13,4 +13,5 @@ export interface IDish extends ICategory {
   weight: number;
   description: string;
   tegs: string[];
+  count?: number;
 }

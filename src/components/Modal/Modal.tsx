@@ -3,6 +3,7 @@ import { Dispatch, FC, SetStateAction } from "react";
 import { HeartIcon } from "../../icons/HeartIcon";
 import { CloseIcon } from "../../icons/CloseIcon";
 import { IDish } from "../../interfaces";
+import { useBasket } from "../../store/useBasket";
 
 interface ModalProps {
   isVisible: boolean;
@@ -11,6 +12,7 @@ interface ModalProps {
 }
 
 export const Modal: FC<ModalProps> = ({ isVisible, item, setVisible }) => {
+  const { addDishesBasket } = useBasket();
   return (
     <div
       className={clsx(
@@ -40,7 +42,9 @@ export const Modal: FC<ModalProps> = ({ isVisible, item, setVisible }) => {
         <p className="mb-4 text-sm text-[rgba(0,0,0,0.65)] leading-[15.4px]">
           {item?.description}
         </p>
-        <button className="py-[15px] w-full bg-[#3364E0] text-white rounded-[10px] transition-colors hover:bg-[#486ac0]">
+        <button
+          onClick={() => addDishesBasket(item!)}
+          className="py-[15px] w-full bg-[#3364E0] text-white rounded-[10px] transition-colors hover:bg-[#486ac0]">
           Добавить в корзину
         </button>
       </div>
