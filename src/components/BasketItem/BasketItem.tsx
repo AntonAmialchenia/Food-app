@@ -2,12 +2,15 @@ import { FC } from "react";
 import { IDish } from "../../interfaces";
 import { MinusIcon } from "../../icons/MinusIcon";
 import { PlusIcon } from "../../icons/PlusIcon";
+import { useBasket } from "../../store/useBasket";
 
 interface BasketItemProps {
   item: IDish;
 }
 
 export const BasketItem: FC<BasketItemProps> = ({ item }) => {
+  const addDishesBasket = useBasket((state) => state.addDishesBasket);
+  const removeDish = useBasket((state) => state.removeDish);
   return (
     <div className="flex flex-col flex-[1_0_auto]">
       <div className=" flex items-center justify-between">
@@ -30,9 +33,15 @@ export const BasketItem: FC<BasketItemProps> = ({ item }) => {
           </div>
         </div>
         <div className="font-bolt text-3xl flex items-center gap-3 py-1 px-2 bg-[#F8F7F5] rounded-[10px]">
-          <MinusIcon className="cursor-pointer" />
+          <MinusIcon
+            onClick={() => removeDish(item.id)}
+            className="cursor-pointer hover:bg-[#e9e8e6] transition-colors rounded"
+          />
           <span>{item.count}</span>
-          <PlusIcon className="cursor-pointer" />
+          <PlusIcon
+            onClick={() => addDishesBasket(item)}
+            className="cursor-pointer hover:bg-[#e9e8e6] transition-colors rounded"
+          />
         </div>
       </div>
     </div>

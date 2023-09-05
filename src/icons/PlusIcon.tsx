@@ -1,9 +1,10 @@
 import { FC } from "react";
 import { IconProps } from "../interfaces";
 
-export const PlusIcon: FC<IconProps> = ({ className }) => {
+export const PlusIcon: FC<IconProps> = ({ className, onClick }) => {
   return (
     <svg
+      onClick={onClick}
       className={className}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
