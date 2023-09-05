@@ -1,5 +1,5 @@
-import clsx from "clsx";
 import { Dispatch, FC, SetStateAction } from "react";
+import clsx from "clsx";
 import { HeartIcon } from "../../icons/HeartIcon";
 import { CloseIcon } from "../../icons/CloseIcon";
 import { IDish } from "../../interfaces";
@@ -15,11 +15,14 @@ export const Modal: FC<ModalProps> = ({ isVisible, item, setVisible }) => {
   const { addDishesBasket } = useBasket();
   return (
     <div
+      onClick={() => setVisible(false)}
       className={clsx(
         "fixed top-0 bottom-0 right-0 left-0  bg-[rgba(0,0,0,0.4)]",
         isVisible ? "flex items-center justify-center" : "hidden",
       )}>
-      <div className="p-3 bg-white rounded-2xl max-w-sm ">
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="p-3 bg-white rounded-2xl max-w-sm ">
         <div className="relative bg-[#F8F7F5] rounded-2xl p-3 flex justify-center mb-2">
           <img
             className="max-w-[190px] max-h-[190px]"
