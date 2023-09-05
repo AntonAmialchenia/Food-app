@@ -21,7 +21,9 @@ export const useCategories = create<CategoriesState>((set) => ({
       if (!data.length) throw new Error("Failed to fetch. Try again.");
       set({ categories: data, error: null });
     } catch (error) {
-      set({ error: error.message });
+      if (error instanceof Error) {
+        set({ error: error.message });
+      }
     } finally {
       set({ isLoading: false });
     }
