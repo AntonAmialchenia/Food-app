@@ -16,7 +16,7 @@ export const Dish: FC<DishProps> = ({ item, setIdDish, setVisible }) => {
     <div onClick={() => handlerClick(item.id)} className="cursor-pointer">
       <div className="p-3 rounded-xl bg-[#F8F7F5] mb-4 flex justify-center transition-colors hover:bg-[#e5e4e2]">
         <img
-          className="max-w-[200px] h-48"
+          className="max-w-[12.5rem] h-48"
           src={item.image_url}
           alt={item.description}
         />

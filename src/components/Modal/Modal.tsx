@@ -25,7 +25,7 @@ export const Modal: FC<ModalProps> = ({ isVisible, item, setVisible }) => {
         className="p-3 bg-white rounded-2xl max-w-sm ">
         <div className="relative bg-[#F8F7F5] rounded-2xl p-3 flex justify-center mb-2">
           <img
-            className="max-w-[190px] max-h-[190px]"
+            className="max-w-[11.875rem] max-h-[11.875rem]"
             src={item?.image_url}
             alt={item?.description}
           />
@@ -35,19 +35,19 @@ export const Modal: FC<ModalProps> = ({ isVisible, item, setVisible }) => {
             onClick={() => setVisible(false)}
           />
         </div>
-        <h3 className="font-semibold text-xl leading-[16.8px] mb-2">
+        <h3 className="font-semibold text-xl leading-[1.05rem] mb-2">
           {item?.name}
         </h3>
-        <p className="text-sm leading-[15.4px] mb-2">
+        <p className="text-sm leading-[0.963rem] mb-2">
           <span className="font-semibold">{item?.price} ₽</span> .
           <span className="text-[rgba(0,0,0,0.4)]"> {item?.weight}г</span>
         </p>
-        <p className="mb-4 text-sm text-[rgba(0,0,0,0.65)] leading-[15.4px]">
+        <p className="mb-4 text-sm text-[rgba(0,0,0,0.65)] leading-[0.963rem]">
           {item?.description}
         </p>
         <button
           onClick={() => addDishesBasket(item!)}
-          className="py-[15px] w-full bg-[#3364E0] text-white rounded-[10px] transition-colors hover:bg-[#486ac0]">
+          className="py-[0.94rem] w-full bg-[#3364E0] text-white rounded-[0.625rem] transition-colors hover:bg-[#486ac0]">
           Добавить в корзину
         </button>
       </div>

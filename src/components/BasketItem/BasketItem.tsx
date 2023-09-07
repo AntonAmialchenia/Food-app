@@ -23,16 +23,16 @@ export const BasketItem: FC<BasketItemProps> = ({ item }) => {
             />
           </div>
           <div>
-            <h3 className="font-semibold text-xl leading-[16.8px] mb-2">
+            <h3 className="font-semibold text-xl leading-[1.05rem] mb-2">
               {item.name}
             </h3>
-            <p className="text-sm leading-[15.4px] mb-2">
+            <p className="text-sm leading-[0.963rem] mb-2">
               <span className="font-semibold">{item?.price} ₽</span> .
               <span className="text-[rgba(0,0,0,0.4)]"> {item?.weight}г</span>
             </p>
           </div>
         </div>
-        <div className="font-bolt text-3xl flex items-center gap-3 py-1 px-2 bg-[#F8F7F5] rounded-[10px]">
+        <div className="font-bolt text-3xl flex items-center gap-3 py-1 px-2 bg-[#F8F7F5] rounded-[0.625rem]">
           <MinusIcon
             onClick={() => removeDish(item.id)}
             className="cursor-pointer hover:bg-[#e9e8e6] transition-colors rounded"
