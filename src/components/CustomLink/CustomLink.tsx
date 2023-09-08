@@ -15,8 +15,9 @@ export const CustomLink: FC<CustomLinkProps> = ({
 }) => {
   const match = useMatch({
     path: to,
-    end: to.length > 1,
+    end: to.length === 1,
   });
+  console.log(match?.pathnameBase);
 
   return (
     <Link to={to} className={clsx(className, match ? "text-[#3364E0]" : "")}>

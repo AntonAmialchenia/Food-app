@@ -9,8 +9,8 @@ import { Basket } from "../pages/Basket";
 export const App: FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path="" element={<HomePage />}>
+      <Route path="" element={<Layout />}>
+        <Route path="/home/" element={<HomePage />}>
           <Route path="dishes" element={<DishesPage />} />
         </Route>
         <Route path="*" element={<NotFound />} />
