@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useBasket } from "../../store/useBasket";
 import { BasketItem } from "../../components/BasketItem";
+import { Button } from "../../components/Button";
 
 interface BasketProps {}
 
@@ -18,9 +19,9 @@ export const Basket: FC<BasketProps> = () => {
       {dishesBasket.map((item) => (
         <BasketItem key={item.id} item={item} />
       ))}
-      <button className="flex-[0_0_auto] py-[0.94rem] bg-[#3364E0] transition-colors hover:bg-[#486ac0] text-white rounded-[0.625rem]">
+      <Button className="flex-[0_0_auto] py-[0.94rem]">
         Оплатить {totalPrice} ₽
-      </button>
+      </Button>
     </div>
   );
 };

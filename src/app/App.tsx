@@ -5,6 +5,7 @@ import { HomePage } from "../pages/HomePage";
 import { DishesPage } from "../pages/DishesPage";
 import { NotFound } from "../pages/NotFound";
 import { Basket } from "../pages/Basket";
+import { Login } from "../pages/Login";
 
 export const App: FC = () => {
   return (
@@ -15,6 +16,7 @@ export const App: FC = () => {
         </Route>
         <Route path="*" element={<NotFound />} />
         <Route path="basket" element={<Basket />} />
+        <Route path="profile" element={<Login />} />
       </Route>
     </Routes>
   );
