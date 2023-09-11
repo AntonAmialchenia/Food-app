@@ -3,12 +3,6 @@ import { FC, InputHTMLAttributes } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
-export const Input: FC<InputProps> = ({ type, placeholder, className }) => {
-  return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      className={clsx(className, "p-2 rounded-md")}
-    />
-  );
+export const Input: FC<InputProps> = ({ className, ...props }) => {
+  return <input className={clsx(className, "p-2 rounded-md")} {...props} />;
 };
