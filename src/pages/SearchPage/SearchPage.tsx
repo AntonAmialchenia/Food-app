@@ -4,20 +4,19 @@ import { Input } from "../../components/iU/Input";
 import { useDishes } from "../../store";
 import { Dish } from "../../components/Dish";
 import { Modal } from "../../components/Modal";
+import { useSearchAndVisibleModal } from "../../hooks/useSearchAndVisibleModal";
+import { ContainerDishes } from "../../components/iU/ContainerDishes";
 
 interface SearchPageProps {}
 
 export const SearchPage: FC<SearchPageProps> = () => {
-  const [query, setQuery] = useState("");
-  const [idDish, setIdDish] = useState(1);
-  const [visible, setVisible] = useState(false);
-
   const dishes = useDishes((state) => state.dishes);
 
-  const dishModal = dishes.find((item) => item.id === idDish);
-  const searchDiches = dishes.filter((dish) =>
-    dish.name.toLowerCase().includes(query.toLowerCase()),
-  );
+  const [query, setQuery] = useState("");
+
+  const { setIdDish, visible, setVisible, dishModal, searchDishes } =
+    useSearchAndVisibleModal(dishes, query);
+
   return (
     <Container>
       <h1 className="text-2xl font-semibold mb-5">Поиск блюд</h1>
@@ -28,9 +27,9 @@ export const SearchPage: FC<SearchPageProps> = () => {
         type="text"
         placeholder="Введите название блюда"
       />
-      <div className=" grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] auto-cols-max gap-x-3 gap-y-4 ">
-        {!!query &&
-          searchDiches.map((item) => (
+      <ContainerDishes>
+        {searchDishes &&
+          searchDishes.map((item) => (
             <Dish
               key={item.id}
               item={item}
@@ -38,7 +37,7 @@ export const SearchPage: FC<SearchPageProps> = () => {
               setVisible={setVisible}
             />
           ))}
-      </div>
+      </ContainerDishes>
       <Modal item={dishModal} isVisible={visible} setVisible={setVisible} />
     </Container>
   );
