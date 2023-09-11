@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import { linkList } from "../../constants";
-import { CustomLink } from "../CustomLink";
+import { CustomLink } from "../iU/CustomLink";
 
 interface LinksListProps {}
 
