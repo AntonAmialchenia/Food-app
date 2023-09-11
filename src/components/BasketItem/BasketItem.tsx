@@ -2,7 +2,7 @@ import { FC } from "react";
 import { IDish } from "../../interfaces";
 import { MinusIcon } from "../../icons/MinusIcon";
 import { PlusIcon } from "../../icons/PlusIcon";
-import { useBasket } from "../../store/useBasket";
+import { useBasket } from "../../store";
 
 interface BasketItemProps {
   item: IDish;

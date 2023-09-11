@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { HeartIcon } from "../../icons/HeartIcon";
 import { CloseIcon } from "../../icons/CloseIcon";
 import { IDish } from "../../interfaces";
-import { useBasket } from "../../store/useBasket";
+import { useBasket } from "../../store";
 
 interface ModalProps {
   isVisible: boolean;
