@@ -7,6 +7,7 @@ import { NotFound } from "../pages/NotFound";
 import { Basket } from "../pages/Basket";
 import { Login } from "../pages/Login";
 import { useAuth } from "../store";
+import { SearchPage } from "../pages/SearchPage";
 
 export const AppRouter: FC = () => {
   const isAuth = useAuth((state) => state.isAuth);
@@ -16,10 +17,11 @@ export const AppRouter: FC = () => {
       <Route path="" element={<Layout />}>
         {isAuth ? (
           <>
+            <Route path="*" element={<NotFound />} />
             <Route path="/home/" element={<HomePage />}>
               <Route path="dishes" element={<DishesPage />} />
             </Route>
-            <Route path="*" element={<NotFound />} />
+            <Route path="search" element={<SearchPage />} />
             <Route path="basket" element={<Basket />} />
             <Route path="profile" element={<Login />} />
           </>

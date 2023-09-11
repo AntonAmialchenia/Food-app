@@ -5,6 +5,7 @@ import { Loader } from "../../components/Loader";
 import { Sort } from "../../components/Sort";
 import { sortItems } from "../../constants";
 import { Modal } from "../../components/Modal";
+import { Container } from "../../components/Container";
 
 interface DishesPageProps {}
 
@@ -30,7 +31,7 @@ export const DishesPage: FC<DishesPageProps> = () => {
   }, [fetchAllDishes]);
 
   return (
-    <div className="bg-white rounded-2xl p-4">
+    <Container>
       <Sort items={sortItems} id={id} onChange={setId} />
       <div className=" grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] auto-cols-max gap-x-3 gap-y-4 ">
         {error && <h2>{error}</h2>}
@@ -45,6 +46,6 @@ export const DishesPage: FC<DishesPageProps> = () => {
         ))}
       </div>
       <Modal item={dishModal} isVisible={visible} setVisible={setVisible} />
-    </div>
+    </Container>
   );
 };

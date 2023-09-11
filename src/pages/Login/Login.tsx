@@ -4,6 +4,7 @@ import { Input } from "../../components/Input";
 import { useAuth } from "../../store";
 
 import avatar from "../../assets/avatar.png";
+import { Container } from "../../components/Container";
 
 interface LoginProps {}
 
@@ -24,7 +25,7 @@ export const Login: FC<LoginProps> = () => {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-4 flex flex-col items-center">
+    <Container className="flex flex-col items-center">
       <h1 className="text-2xl font-semibold mb-8">
         {isAuth ? "Профиль" : "Авторизация"}
       </h1>
@@ -43,6 +44,6 @@ export const Login: FC<LoginProps> = () => {
           <Button className="py-2">Войти</Button>
         </form>
       )}
-    </div>
+    </Container>
   );
 };
