@@ -1,10 +1,10 @@
 import { FC, FormEvent } from "react";
-import { Button } from "../../components/Button";
-import { Input } from "../../components/Input";
+import { Button } from "../../components/iU/Button";
+import { Input } from "../../components/iU/Input";
 import { useAuth } from "../../store";
 
 import avatar from "../../assets/avatar.png";
-import { Container } from "../../components/Container";
+import { Container } from "../../components/iU/Container";
 
 interface LoginProps {}
 

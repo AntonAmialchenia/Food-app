@@ -5,7 +5,7 @@ import avatar from "../../assets/avatar.png";
 import { Location } from "../Location";
 import { LinksList } from "../LinksList";
 import { useAuth } from "../../store";
-import { Container } from "../Container";
+import { Container } from "../iU/Container";
 
 interface NavBarProps {}
 

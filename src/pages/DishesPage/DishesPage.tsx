@@ -1,11 +1,11 @@
 import { FC, useEffect, useState } from "react";
 import { useDishes } from "../../store";
 import { Dish } from "../../components/Dish";
-import { Loader } from "../../components/Loader";
+import { Loader } from "../../components/iU/Loader";
 import { Sort } from "../../components/Sort";
 import { sortItems } from "../../constants";
 import { Modal } from "../../components/Modal";
-import { Container } from "../../components/Container";
+import { Container } from "../../components/iU/Container";
 
 interface DishesPageProps {}
 

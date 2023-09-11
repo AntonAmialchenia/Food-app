@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useBasket } from "../../store";
 import { BasketItem } from "../../components/BasketItem";
-import { Button } from "../../components/Button";
+import { Button } from "../../components/iU/Button";
 
 interface BasketProps {}
 

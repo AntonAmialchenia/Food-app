@@ -2,8 +2,8 @@ import { FC, useEffect } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { Category } from "../../components/Category";
 import { useCategories } from "../../store";
-import { Loader } from "../../components/Loader";
-import { Container } from "../../components/Container";
+import { Loader } from "../../components/iU/Loader";
+import { Container } from "../../components/iU/Container";
 
 interface HomePageProps {}
 
