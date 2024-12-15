@@ -12,7 +12,7 @@ interface ModalProps {
 }
 
 export const Modal: FC<ModalProps> = ({ isVisible, item, setVisible }) => {
-  const { addDishesBasket } = useBasket();
+  const addDishesBasket = useBasket((state) => state.addDishesBasket);
   return (
     <div
       onClick={() => setVisible(false)}

@@ -33,11 +33,6 @@ export const HomePage: FC<HomePageProps> = () => {
               <Category item={item} />
             </Link>
           ))}
-          {categories.map((item) => (
-            <Link to="dishes" key={item.id}>
-              <Category item={item} />
-            </Link>
-          ))}
         </Container>
       )}
     </>

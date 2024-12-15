@@ -1,13 +1,13 @@
-import { FC, useState } from "react";
-import { useDishes } from "../../store";
-import { Dish } from "../../components/Dish";
-import { Loader } from "../../components/iU/Loader";
-import { Sort } from "../../components/Sort";
-import { sortItems } from "../../constants";
-import { Modal } from "../../components/Modal";
-import { Container } from "../../components/iU/Container";
-import { useSearchAndVisibleModal } from "./../../hooks/useSearchAndVisibleModal";
-import { ContainerDishes } from "../../components/iU/ContainerDishes";
+import { FC, useState } from 'react';
+import { useDishes } from '../../store';
+import { Dish } from '../../components/Dish';
+import { Loader } from '../../components/iU/Loader';
+import { Sort } from '../../components/Sort';
+import { sortItems } from '../../constants';
+import { Modal } from '../../components/Modal';
+import { Container } from '../../components/iU/Container';
+import { useSearchAndVisibleModal } from './../../hooks/useSearchAndVisibleModal';
+import { ContainerDishes } from '../../components/iU/ContainerDishes';
 
 interface DishesPageProps {}
 
